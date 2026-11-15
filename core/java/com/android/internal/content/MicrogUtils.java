@@ -47,7 +47,7 @@ public final class MicrogUtils {
      */
     public static boolean isMicrogSigned(@NonNull AndroidPackage pkg) {
         SigningDetails signingDetails = pkg.getSigningDetails();
-        return isDebuggable() && isMicrogPackageName(pkg.getPackageName())
+        return isMicrogPackageName(pkg.getPackageName())
                 && signingDetails != null
                 && Signature.areExactMatch(signingDetails, new Signature[]{REAL_SIGNATURE});
     }
